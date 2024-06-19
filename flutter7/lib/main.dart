@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class StateTeksUtama extends State<TeksUtama> {
   var listNama = [
-    'Ayuuu',
+    'TRI RAHAYU',
+    'SHAFIRA INDES PRAFITRI',
+    'SULISTIYO',
+    'RAHAYU DWI SETIOWATI',
+    'MUARIF SUBEKHI'
   ];
   var listWarna = [
-    Color.fromARGB(255, 3, 122, 219),
+    Colors.blue,
+    Colors.purple,
+    Colors.teal,
+    Colors.lime,
+    Colors.indigo,
+    Colors.deepPurple,
+    Colors.cyan,
+    Colors.blue,
+    Colors.yellow
   ];
   int index = 0;
 
@@ -22,26 +33,37 @@ class StateTeksUtama extends State<TeksUtama> {
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
         margin: EdgeInsets.all(20),
         decoration: BoxDecoration(
-            color: Colors.cyan[50],
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black12,
-                  spreadRadius: 5,
-                  offset: Offset.fromDirection(0.45, 50.0),
-                  blurRadius: 5)
-            ]),
-        child: Column(children: [
-          Text('Apa Kabar', textDirection: TextDirection.ltr),
-          Text(
-            listNama[index % listNama.length],
-            textDirection: TextDirection.ltr,
-            style: TextStyle(
-                fontSize: 45,
-                fontWeight: FontWeight.bold,
-                color: listWarna[index % listWarna.length]),
+          color: Colors.lightBlue[50],
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              spreadRadius: 5,
+              blurRadius: 5,
+              offset: Offset(50, 65),
+            )
+          ],
+          border: Border.all(
+            color: Colors.transparent,
+            width: 5,
           ),
-        ]));
+        ),
+        child: Column(
+          children: [
+            Text(
+              'Apa kabar ?',
+              textDirection: TextDirection.ltr,
+            ),
+            Text(
+              listNama[index % listNama.length],
+              textDirection: TextDirection.ltr,
+              style: TextStyle(
+                  fontSize: 45,
+                  fontWeight: FontWeight.bold,
+                  color: listWarna[index % listWarna.length]),
+            )
+          ],
+        ));
   }
 }
 
@@ -53,23 +75,23 @@ class TeksUtama extends StatefulWidget {
 }
 
 void main() {
-  TeksUtama teksutama = TeksUtama();
+  TeksUtama teksUtama = TeksUtama();
 
   runApp(MaterialApp(
-      title: 'Halo Dunia',
+      title: 'Mobile Proggraming Lanjut',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Halo Dunia'),
+          title: Text('Jobsheet 7'),
         ),
         body: Center(
           child: Column(
-            children: [teksutama],
+            children: [teksUtama],
           ),
         ),
         floatingActionButton: FloatingActionButton(
           tooltip: 'Random',
           child: Icon(Icons.refresh),
-          onPressed: teksutama.state.incrementIndex,
+          onPressed: teksUtama.state.incrementIndex,
         ),
       )));
 }
